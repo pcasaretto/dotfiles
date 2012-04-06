@@ -1,5 +1,6 @@
 # shortcut to this dotfiles path is $BASH
 export DOTFILES=$HOME/.dotfiles
+export WORKSPACE=$HOME/workspace
 
 # source every .bash file in this rep
 for config_file in $DOTFILES/**/*.bash
