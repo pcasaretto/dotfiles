@@ -1,0 +1,12 @@
+#!/bin/sh
+name=$1
+mkdir $name
+cd $name
+echo "source :rubygems\n\ngem 'sinatra'" >> Gemfile
+echo "require 'sinatra'
+
+get '/' do
+  \"Hello World!\"
+end" >> app.rb
+echo "require './app'
+run Sinatra::Application" >> config.ru
