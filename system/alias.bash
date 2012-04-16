@@ -10,4 +10,8 @@ _ws () {
 ws () { 
   cd "$WORKSPACE/$@"
 }
+
+function fullpath() {
+    echo `pwd`/"$1"
+}
 complete -F _ws ws
