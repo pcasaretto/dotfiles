@@ -1,0 +1,1 @@
+export LANG='pt_BR.UTF-8'
