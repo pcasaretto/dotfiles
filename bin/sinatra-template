@@ -2,11 +2,21 @@
 name=$1
 mkdir $name
 cd $name
-echo "source :rubygems\n\ngem 'sinatra'" >> Gemfile
-echo "require 'sinatra'
+
+cat > Gemfile << EOF
+source :rubygems
+gem 'sinatra'
+EOF
+
+cat > app.rb << EOF
+require 'sinatra'
 
 get '/' do
-  \"Hello World!\"
-end" >> app.rb
-echo "require './app'
-run Sinatra::Application" >> config.ru
+  "Hello World!"
+end
+EOF
+
+cat > config.ru << EOF
+require './app'
+run Sinatra::Application
+EOF
