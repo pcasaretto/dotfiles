@@ -1,4 +1,4 @@
 for config_file in $DOTFILES/bash/functions/*.bash
 do
-  . $config_file
+  source $config_file
 done

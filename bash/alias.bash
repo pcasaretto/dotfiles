@@ -1,1 +1,1 @@
-alias reload!='. ~/.bashrc'
+alias reload!='source ~/.bashrc'
