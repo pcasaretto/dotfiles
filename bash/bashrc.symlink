@@ -5,5 +5,5 @@ export WORKSPACE=$HOME/workspace
 # source every .bash file in this rep
 for config_file in $DOTFILES/**/*.bash
 do
-  source $config_file
+  . $config_file
 done
