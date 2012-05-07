@@ -1,0 +1,5 @@
+#! /bin/sh
+# Usage:  curl http://some_url/that_returns.json | format_json
+
+python -c "import sys, json; print json.dumps(
+json.load(sys.stdin), sort_keys=True, indent=4)"
