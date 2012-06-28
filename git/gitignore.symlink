@@ -13,3 +13,6 @@
 *.swp
 *.rbc
 .tm_properties
+
+#bundle install shims
+vendor/bundle
