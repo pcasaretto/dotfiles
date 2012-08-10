@@ -1,2 +1,2 @@
-# export EDITOR='mate -w' sorry mate, you got replaced for now
-export EDITOR='subl -w'
+export EDITOR='mate -w'
+# export EDITOR='subl -w'
