@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby -wKU
+ENV['TM_SUPPORT_PATH']
+command = "time rspec"
+root_path = ENV['TM_PROJECT_DIRECTORY']
+
+cmd = 'osascript '
+cmd += '"' + ENV['TM_BUNDLE_SUPPORT'] + '/run_command.applescript"'
+cmd += ' "cd ' + root_path + ' &amp;&amp; ' + command + ' ' + ENV['TM_FILEPATH'] + '"'
+cmd += ' "Ruby Tests"'
+system(cmd)
+</string>
+	<key>input</key>
+	<string>document</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>keyEquivalent</key>
+	<string>@r</string>
+	<key>name</key>
+	<string>Run File Rspec Test in Terminal</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
+	<string>toolTip</string>
+	<key>scope</key>
+	<string>source.ruby.rspec</string>
+	<key>uuid</key>
+	<string>A4766BD3-A7D5-4AAC-B224-A3F0D4CE6504</string>
+	<key>version</key>
+	<string>2</string>
+</dict>
+</plist>
