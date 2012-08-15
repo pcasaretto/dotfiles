@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby -wKU
+
+ENV['TM_SUPPORT_PATH']
+command = "time rspec"
+root_path = ENV['TM_PROJECT_DIRECTORY']
+
+cmd = 'osascript '
+cmd += '"' + ENV['TM_BUNDLE_SUPPORT'] + '/run_command.applescript"'
+cmd += ' "cd ' + root_path + ' &amp;&amp; ' + command + ' ' + ENV['TM_FILEPATH'] + ":#{ENV['TM_LINE_NUMBER']}" +'"'
+cmd += ' "Ruby Tests"'
+system(cmd)
+</string>
+	<key>input</key>
+	<string>document</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>keyEquivalent</key>
+	<string>@R</string>
+	<key>name</key>
+	<string>Run Focused Test</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
+	<string>discard</string>
+	<key>scope</key>
+	<string>source.ruby.rspec</string>
+	<key>uuid</key>
+	<string>1B57212B-72B7-4831-9D94-9D87CE3E9CA7</string>
+	<key>version</key>
+	<integer>2</integer>
+</dict>
+</plist>

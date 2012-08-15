@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>beforeRunningCommand</key>
-	<string>nop</string>
+	<string>saveActiveFile</string>
 	<key>command</key>
 	<string>#!/usr/bin/env ruby -wKU
 ENV['TM_SUPPORT_PATH']
@@ -23,18 +23,18 @@ system(cmd)
 	<key>keyEquivalent</key>
 	<string>@r</string>
 	<key>name</key>
-	<string>Run File Rspec Test in Terminal</string>
+	<string>Run File Rspec Tests in Terminal</string>
 	<key>outputCaret</key>
 	<string>afterOutput</string>
 	<key>outputFormat</key>
 	<string>text</string>
 	<key>outputLocation</key>
-	<string>toolTip</string>
+	<string>discard</string>
 	<key>scope</key>
 	<string>source.ruby.rspec</string>
 	<key>uuid</key>
 	<string>A4766BD3-A7D5-4AAC-B224-A3F0D4CE6504</string>
 	<key>version</key>
-	<string>2</string>
+	<integer>2</integer>
 </dict>
 </plist>
