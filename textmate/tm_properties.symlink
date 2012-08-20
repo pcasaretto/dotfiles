@@ -21,10 +21,6 @@ excludeInFolderSearch = "{$excludeInFolderSearch,$myExtraExcludes}"
 excludeInBrowser      = "{$excludeInBrowser,$myExtraExcludes}" 
 
 
-# Configure git and hg
-#
-TM_HG  = "/usr/local/bin/git"
-
 # Default editing configuration
 #
 softWrap         = true
@@ -43,13 +39,6 @@ spellingLanguage = 'en'
 [ *.{icns,ico,jpg,jpeg,m4v,nib,pdf,png,psd,pyc,rtf,tif,tiff,xib} ]
 binary           = true
 
-[ source ]
-softTabs         = true
-tabSize          = 2
-
-[ source.python ]
-softTabs         = true
-tabSize          = 4
 
 [ "{README,INSTALL,LICENSE,TODO}" ]
 fileType         = "text.plain"
