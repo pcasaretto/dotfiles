@@ -90,8 +90,6 @@ map ,s :call StripWhitespace ()<CR>
 
 call pathogen#infect()
 
-autocmd vimenter * if !argc() | NERDTree | endif
-
 " Cmd-R for RSpec
 nmap <silent> ,<D-R> :call RunRspecCurrentFileConque()<CR>
 " Cmd-Shift-R for RSpec Current Line
