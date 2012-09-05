@@ -7,7 +7,7 @@
 	<key>command</key>
 	<string>#!/usr/bin/env ruby -wKU
 ENV['TM_SUPPORT_PATH']
-command = "time rspec"
+command = "time bundle exec rspec"
 root_path = ENV['TM_PROJECT_DIRECTORY']
 
 cmd = 'osascript '
