@@ -23,7 +23,7 @@ on run argv
 
   if length of argv is 2
     tell application "Terminal"
-      repeat with w in windows
+      repeat with w in (every window whose visible is true)
         tell w
           repeat with t in tabs
             set _title to (custom title of t)
