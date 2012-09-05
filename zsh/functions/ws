@@ -1,0 +1,3 @@
+ws () { 
+  cd "$WORKSPACE/$@"
+}
