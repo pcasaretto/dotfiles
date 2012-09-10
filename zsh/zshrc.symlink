@@ -1,6 +1,16 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
+# shortcut to this dotfiles path is $DOTFILES
+DOTFILES=$HOME/.dotfiles
+WORKSPACE=$HOME/workspace
+
+# source every .sh file in this rep
+for config_file in $DOTFILES/*/*.{sh,zsh}
+do
+  source $config_file
+done
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -32,12 +42,3 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
-# shortcut to this dotfiles path is $DOTFILES
-export DOTFILES=$HOME/.dotfiles
-export WORKSPACE=$HOME/workspace
-
-# source every .sh file in this rep
-for config_file in $DOTFILES/*/*.{sh,zsh}
-do
-  source $config_file
-done
