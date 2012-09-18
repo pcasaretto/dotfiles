@@ -5,6 +5,8 @@ ZSH=$HOME/.oh-my-zsh
 DOTFILES=$HOME/.dotfiles
 WORKSPACE=$HOME/workspace
 
+DISABLE_AUTO_TITLE='true'
+
 # source every .sh file in this rep
 for config_file in $DOTFILES/*/*.{sh,zsh}
 do
