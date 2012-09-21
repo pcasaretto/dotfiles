@@ -1,3 +1,0 @@
-ws () { 
-  cd "$WORKSPACE/$@"
-}

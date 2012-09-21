@@ -1,9 +1,0 @@
-# shortcut to this dotfiles path is $DOTFILES
-export DOTFILES=$HOME/.dotfiles
-export WORKSPACE=$HOME/workspace
-
-# source every .sh file in this rep
-for config_file in $DOTFILES/**/*.{sh,bash}
-do
-  source $config_file
-done
