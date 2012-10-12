@@ -6,6 +6,7 @@ DOTFILES=$HOME/.dotfiles
 WORKSPACE=$HOME/workspace
 
 DISABLE_AUTO_TITLE='true'
+LANG='en_US.UTF-8'
 
 # source every .sh file in this rep
 for config_file in $DOTFILES/*/*.{sh,zsh}

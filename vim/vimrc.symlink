@@ -7,7 +7,8 @@ set noswapfile
 set autoindent             " automatic indent new lines
 set smartindent            " be smart about it
 inoremap # X<BS>#
-set nowrap                 " do not wrap lines
+set wrap                   " do wrap lines
+set linebreak
 set softtabstop=2          " yep, two
 set shiftwidth=2           " ..
 set tabstop=4
