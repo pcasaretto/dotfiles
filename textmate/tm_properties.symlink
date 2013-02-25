@@ -1,6 +1,6 @@
 # Basic Settings
 #
-fontName         = "Menlo"
+fontName         = "Monaco"
 fontSize         = 14
 
 # Extra files to include
