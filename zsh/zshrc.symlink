@@ -3,7 +3,7 @@ ZSH=$HOME/.oh-my-zsh
 
 # shortcut to this dotfiles path is $DOTFILES
 DOTFILES=$HOME/.dotfiles
-WORKSPACE=$HOME/workspace
+WORKSPACE=$HOME/Projects
 
 LANG='en_US.UTF-8'
 
