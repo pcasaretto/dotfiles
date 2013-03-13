@@ -42,5 +42,3 @@ binary           = true
 
 [ "{README,INSTALL,LICENSE,TODO}" ]
 fileType         = "text.plain"
-
-windowTitle = "$TM_DISPLAYNAME${TM_DIRECTORY/\A(?:\/Users\/james\/Documents\/(?:work\/)?(?!\b(?:communication|programming|reference)\b)\w+\/?(.*)|(.+))\z/${2:? – ${2/\/Users\/james/~/}:${1/\A(?=.)/ – /}}/}$TM_SCM_BRANCH"
