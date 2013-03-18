@@ -103,18 +103,18 @@ function! RunInTerminal(file)
 
   if exists("l:command")
     let g:last_run_in_terminal = a:file
-    let l:run_script = "!osascript ~/.vim/tools/run_command.applescript" 
+    let l:run_script = "!osascript ~/.vim/tools/run_command.applescript"
     silent execute ":up"
     silent execute l:run_script . " '" . l:command . " " . a:file . "' " . g:vim_terminal . " &"
     silent execute ":redraw!"
   else
-    echo "Couldn't figure out how to run " . a:file 
+    echo "Couldn't figure out how to run " . a:file
   end
 endfunction
 
 function! RunFileInTerminal()
   if exists("g:vim_terminal")
-    call RunInTerminal(expand("%")) 
+    call RunInTerminal(expand("%"))
   else
     echo "You need to set g:vim_terminal to a valid TTY (e.g. /dev/ttys000)"
   end
@@ -139,7 +139,10 @@ command! RunFileAtLineInTerminal call RunFileAtLineInTerminal()
 command! ReRunLastFileCommand call ReRunLastFileCommand()
 
 " Cmd-R for RSpec
-nmap <silent> ,<D-r> :call RunFileInTerminal()<CR>
+" nmap <silent> ,<D-r> :call RunFileInTerminal()<CR>
 " Cmd-Shift-R for RSpec Current Line
-nmap <silent> <D-r> :call RunFileAtLineInTerminal()<CR>
-
+" nmap <silent> <D-r> :call RunFileAtLineInTerminal()<CR>
+if has("gui_macvim")
+  map <D-r> :call RunFileInTerminal()<CR>
+  map ,<D-r> :call RunFileAtLineInTerminal()<CR>
+endif
