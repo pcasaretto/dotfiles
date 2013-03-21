@@ -16,3 +16,6 @@
 [submodule "vim/vim.symlink/bundle/vim-ruby-conque"]
 	path = vim/vim.symlink/bundle/vim-ruby-conque
 	url = git://github.com/skwp/vim-ruby-conque.git
+[submodule "vim/vim.symlink/bundle/vim-ruby"]
+	path = vim/vim.symlink/bundle/vim-ruby
+	url = git://github.com/vim-ruby/vim-ruby.git

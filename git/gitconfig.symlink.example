@@ -1,8 +1,6 @@
 # Sample gitconfig
 #
 
-[hub]
-        protocol = https
 [user]
         name = AUTHORNAME
         email = AUTHOREMAIL
