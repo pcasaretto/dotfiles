@@ -30,4 +30,3 @@ plugins=(git bundler osx)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-fpath=(/usr/local/share/zsh-completions $fpath)
