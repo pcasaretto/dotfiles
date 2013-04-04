@@ -4,6 +4,7 @@
 [user]
         name = AUTHORNAME
         email = AUTHOREMAIL
+[credential]
         helper = osxkeychain
 [color]
         diff = auto
