@@ -7,13 +7,13 @@
 	<key>command</key>
 	<string>#!/usr/bin/env ruby -wKU
 ENV['TM_SUPPORT_PATH']
-command = "time bundle exec rspec"
+command = ENV["RUBY_TEST_COMMAND"] || "rspec"
 root_path = ENV['TM_PROJECT_DIRECTORY']
 
 cmd = 'osascript '
 cmd += '"' + ENV['TM_BUNDLE_SUPPORT'] + '/run_command.applescript"'
 cmd += ' "cd ' + root_path + ' &amp;&amp; ' + command + ' ' + ENV['TM_FILEPATH'] + '"'
-cmd += ' "Ruby Tests"'
+cmd += ' ' + ENV['RUBY_TEST_TTY']
 system(cmd)
 </string>
 	<key>input</key>
