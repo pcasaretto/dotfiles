@@ -42,3 +42,10 @@ binary           = true
 
 [ "{README,INSTALL,LICENSE,TODO}" ]
 fileType         = "text.plain"
+
+[ *.rb ]
+fileType         = source.ruby.rails
+
+[ *_spec.rb ]
+fileType         = source.ruby.rspec
+
