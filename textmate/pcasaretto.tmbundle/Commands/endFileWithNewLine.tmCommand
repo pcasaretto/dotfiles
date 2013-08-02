@@ -5,13 +5,7 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>#!/usr/bin/env ruby -wKU
-
-content = STDIN.read
-
-content &lt;&lt; "\n" unless content.end_with? "\n"
-print content
-</string>
+	<string>$TM_GIT stripspace &lt; /dev/stdin</string>
 	<key>input</key>
 	<string>document</string>
 	<key>inputFormat</key>
