@@ -1,0 +1,60 @@
+[submodule "vim/vim.symlink/bundle/vim-coffee-script"]
+	path = vim/vim.symlink/bundle/vim-coffee-script
+	url = git://github.com/kchmck/vim-coffee-script.git
+[submodule "vim/vim.symlink/bundle/base16-vim"]
+	path = vim/vim.symlink/bundle/base16-vim
+	url = git://github.com/chriskempson/base16-vim.git
+[submodule "vim/vim.symlink/bundle/vim-colors-solarized"]
+	path = vim/vim.symlink/bundle/vim-colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "vim/vim.symlink/bundle/ctrlp"]
+	path = vim/vim.symlink/bundle/ctrlp
+	url = git://github.com/kien/ctrlp.vim.git
+[submodule "vim/vim.symlink/bundle/nerdtree"]
+	path = vim/vim.symlink/bundle/nerdtree
+	url = git://github.com/scrooloose/nerdtree.git
+[submodule "vim/vim.symlink/bundle/puppet-syntax-vim"]
+	path = vim/vim.symlink/bundle/puppet-syntax-vim
+	url = git://github.com/puppetlabs/puppet-syntax-vim.git
+[submodule "vim/vim.symlink/bundle/vim-abolish"]
+	path = vim/vim.symlink/bundle/vim-abolish
+	url = git://github.com/tpope/vim-abolish.git
+[submodule "vim/vim.symlink/bundle/vim-commentary"]
+	path = vim/vim.symlink/bundle/vim-commentary
+	url = git://github.com/tpope/vim-commentary.git
+[submodule "vim/vim.symlink/bundle/vim-endwise"]
+	path = vim/vim.symlink/bundle/vim-endwise
+	url = git://github.com/tpope/vim-endwise.git
+[submodule "vim/vim.symlink/bundle/vim-fugitive"]
+	path = vim/vim.symlink/bundle/vim-fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "vim/vim.symlink/bundle/vim-javascript-syntax"]
+	path = vim/vim.symlink/bundle/vim-javascript-syntax
+	url = git://github.com/jelera/vim-javascript-syntax.git
+[submodule "vim/vim.symlink/bundle/vim-liquid"]
+	path = vim/vim.symlink/bundle/vim-liquid
+	url = git://github.com/tpope/vim-liquid.git
+[submodule "vim/vim.symlink/bundle/vim-markdown"]
+	path = vim/vim.symlink/bundle/vim-markdown
+	url = git://github.com/tpope/vim-markdown.git
+[submodule "vim/vim.symlink/bundle/vim-rails"]
+	path = vim/vim.symlink/bundle/vim-rails
+	url = git://github.com/tpope/vim-rails.git
+[submodule "vim/vim.symlink/bundle/vim-repeat"]
+	path = vim/vim.symlink/bundle/vim-repeat
+	url = git://github.com/tpope/vim-repeat.git
+[submodule "vim/vim.symlink/bundle/vim-slurper"]
+	path = vim/vim.symlink/bundle/vim-slurper
+	url = git://github.com/adamlowe/vim-slurper.git
+[submodule "vim/vim.symlink/bundle/vim-surround"]
+	path = vim/vim.symlink/bundle/vim-surround
+	url = git://github.com/tpope/vim-surround.git
+[submodule "vim/vim.symlink/vim-vividchalk"]
+	path = vim/vim.symlink/bundle/vim-vividchalk
+	url = git://github.com/tpope/vim-vividchalk.git
+[submodule "vim/vim.symlink/webapi-vim"]
+	path = vim/vim.symlink/bundle/webapi-vim
+	url = git://github.com/mattn/webapi-vim.git
+[submodule "vim/vim.symlink/xterm-color-table.vim"]
+	path = vim/vim.symlink/bundle/xterm-color-table.vim
+	url = git://github.com/chrishunt/xterm-color-table.vim.git
