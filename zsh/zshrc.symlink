@@ -2,8 +2,6 @@
 DOTFILES=$HOME/.dotfiles
 WORKSPACE=$HOME/workspace
 
-LANG='en_US.UTF-8'
-
 # all of our zsh files
 typeset -u config_files
 config_files=($DOTFILES/**/*.zsh)
