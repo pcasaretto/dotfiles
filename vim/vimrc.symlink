@@ -30,6 +30,21 @@ set clipboard=unnamed             " use the system clipboard
 set wildmenu                      " enable bash style tab completion
 set wildmode=list:longest,full
 
+" exit to normal mode with 'jj'
+inoremap jj <ESC>
+
+" sane movement with wrap turned on
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up> gk
+vnoremap <Down> gj
+vnoremap <Up> gk
+inoremap <Down> <C-o>gj
+inoremap <Up> <C-o>gk
+
 " put useful info in status bar
 set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [%l,%c]\ [%L,%p%%]
 
@@ -119,16 +134,17 @@ autocmd BufReadPost *
   \ endif
 
 " multi-purpose tab key (auto-complete)
-function! InsertTabWrapper()
-  let col = col('.') - 1
-  if !col || getline('.')[col - 1] !~ '\k'
-    return "\<tab>"
-  else
-    return "\<c-p>"
-  endif
-endfunction
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <s-tab> <c-n>
+"function! InsertTabWrapper()
+"  let col = col('.') - 1
+"  if !col || getline('.')[col - 1] !~ '\k'
+"    return "\<tab>"
+"  else
+"    return "\<c-p>"
+"  endif
+"endfunction
+"inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+"inoremap <s-tab> <c-n>
+let g:UltiSnipsJumpForwardTrigger="<tab>"
 
 " rename current file, via Gary Bernhardt
 function! RenameFile()
