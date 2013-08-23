@@ -58,3 +58,9 @@
 [submodule "vim/vim.symlink/xterm-color-table.vim"]
 	path = vim/vim.symlink/bundle/xterm-color-table.vim
 	url = git://github.com/chrishunt/xterm-color-table.vim.git
+[submodule "vim/vim.symlink/bundle/ultisnips"]
+	path = vim/vim.symlink/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips
+[submodule "vim/vim.symlink/bundle/rspec.vim"]
+	path = vim/vim.symlink/bundle/rspec.vim
+	url = https://github.com/Keithbsmiley/rspec.vim.git
