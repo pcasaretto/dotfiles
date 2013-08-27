@@ -1,6 +1,6 @@
 alias reload='source ~/.zshrc'
 alias dotconfig="cd $DOTFILES"
-alias ohmyzsh="mate ~/.oh-my-zsh"
+alias srv='./script/server'
 
 # List direcory contents
 alias l='ls -lA'
