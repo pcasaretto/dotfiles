@@ -64,3 +64,6 @@
 [submodule "vim/vim.symlink/bundle/rspec.vim"]
 	path = vim/vim.symlink/bundle/rspec.vim
 	url = https://github.com/Keithbsmiley/rspec.vim.git
+[submodule "vim/vim.symlink/bundle/ultisnips-rspec"]
+	path = vim/vim.symlink/bundle/ultisnips-rspec
+	url = https://github.com/Trevoke/ultisnips-rspec.git
