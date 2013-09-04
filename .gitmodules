@@ -67,3 +67,6 @@
 [submodule "vim/vim.symlink/bundle/ultisnips-rspec"]
 	path = vim/vim.symlink/bundle/ultisnips-rspec
 	url = https://github.com/Trevoke/ultisnips-rspec.git
+[submodule "vim/vim.symlink/bundle/vim-autoclose"]
+	path = vim/vim.symlink/bundle/vim-autoclose
+	url = https://github.com/Townk/vim-autoclose.git
