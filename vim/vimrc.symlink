@@ -78,7 +78,7 @@ endif
 let mapleader = ","
 
 " ctrlp config
-let g:ctrlp_map = '<leader>t'
+let g:ctrlp_map = '<leader>f'
 let g:ctrlp_max_height = 30
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_match_window_reversed = 0
@@ -93,8 +93,20 @@ vnoremap . :norm.<cr>
 " die hash rockets, die!
 vnoremap <leader>h :s/:\(\w*\) *=>/\1:/g<cr>
 
+function! Preserve(command)
+  " Preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " Do the business:
+  execute a:command
+  " Clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
+endfunction
+
 " delete all trailing whitespace in current file
-map <leader>w :%!git stripspace<CR>
+map <leader>w :call Preserve(":%!git stripspace")<CR>
 
 " delete all trailing whitespace for each file in repo
 map <leader>W :args `git grep -lI .` \| argdo %s/\s\+$//gce \| w<cr>

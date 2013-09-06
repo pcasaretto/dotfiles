@@ -304,10 +304,12 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1089 88 445 270 0 0 1600 878 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>302 440 924 485 0 0 1920 1058 </string>
+	<string>302 440 924 485 0 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 88 1920 970 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
+	<string>0 88 1920 970 0 0 1920 1058 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
 	<string>0 88 1920 970 0 0 1920 1058 </string>
 	<key>New Bookmarks</key>
 	<array>
@@ -893,7 +895,7 @@
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>1000</integer>
+			<integer>0</integer>
 			<key>Scrollback With Status Bar</key>
 			<false/>
 			<key>Scrollback in Alternate Screen</key>
@@ -1037,7 +1039,7 @@
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
-			<false/>
+			<true/>
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
@@ -1093,7 +1095,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2013-08-27T18:32:56Z</date>
+	<date>2013-09-03T17:25:48Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -1121,7 +1123,7 @@
 	<key>UseBorder</key>
 	<false/>
 	<key>UseCompactLabel</key>
-	<true/>
+	<false/>
 	<key>UseLionStyleFullscreen</key>
 	<true/>
 	<key>WindowNumber</key>
