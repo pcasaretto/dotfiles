@@ -4,6 +4,8 @@
 call pathogen#infect()
 call pathogen#helptags()
 
+runtime macros/matchit.vim        " activate the matchit plugin
+
 syntax on                         " show syntax highlighting
 filetype plugin indent on
 set autoindent                    " set auto indent
