@@ -266,7 +266,7 @@
 	<key>HideScrollbar</key>
 	<false/>
 	<key>HideTab</key>
-	<true/>
+	<false/>
 	<key>HighlightTabLabels</key>
 	<true/>
 	<key>HotKeyBookmark</key>
@@ -304,7 +304,7 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1089 88 445 270 0 0 1600 878 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>302 440 924 485 0 0 1920 1080 </string>
+	<string>302 424 924 485 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 88 1920 970 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -1058,6 +1058,8 @@
 			<string>/Users/pcasaretto</string>
 		</dict>
 	</array>
+	<key>NoSyncNeverRemindPrefsChangesCopy</key>
+	<true/>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -1095,7 +1097,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2013-09-03T17:25:48Z</date>
+	<date>2013-09-12T17:28:05Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
