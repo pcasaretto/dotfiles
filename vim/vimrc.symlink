@@ -1,8 +1,41 @@
 " .vimrc
 
-" load up pathogen and all bundles
-call pathogen#infect()
-call pathogen#helptags()
+filetype off                  " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+
+Bundle 'chriskempson/base16-vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'puppetlabs/puppet-syntax-vim'
+Bundle 'Keithbsmiley/rspec.vim'
+Bundle 'SirVer/ultisnips'
+Bundle 'Trevoke/ultisnips-rspec'
+Bundle 'tpope/vim-abolish'
+Bundle 'Townk/vim-autoclose'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-fugitive'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'tpope/vim-liquid'
+Bundle 'tpope/vim-markdown'
+Bundle 'yaymukund/vim-rabl'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-repeat'
+Bundle 'adamlowe/vim-slurper'
+Bundle 'tpope/vim-surround'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'kana/vim-textobj-user'
+Bundle 'tpope/vim-vividchalk'
+Bundle 'mattn/webapi-vim'
+Bundle 'chrishunt/xterm-color-table.vim'
 
 runtime macros/matchit.vim        " activate the matchit plugin
 
@@ -111,25 +144,18 @@ endfunction
 map <leader>w :call Preserve(":%!git stripspace")<CR>
 
 " delete all trailing whitespace for each file in repo
-map <leader>W :args `git grep -lI .` \| argdo %s/\s\+$//gce \| w<cr>
+map <leader>W :arglocal! `git grep -lI` \| argdo execute("%!git stripspace") \| update<cr>
 
 " map markdown preview
 map <leader>m :!open -a Marked %<cr><cr>
 
 " map git commands
-map <leader>b :Gblame<cr>
 map <leader>l :!clear && git log -p %<cr>
 map <leader>d :!clear && git diff %<cr>
-
-" open gist after it's been created
-let g:gist_open_browser_after_post = 1
 
 " shortcuts for going next/previous in quickfix (for git log spelunking)
 nmap [q :cprevious<cr>
 nmap ]q :cnext<cr>
-
-" map Silver Searcher
-map <leader>a :Ag!<space>
 
 " clear the command line and search highlighting
 noremap <C-l> :nohlsearch<CR>
@@ -147,17 +173,6 @@ autocmd BufReadPost *
   \   exe "normal g`\"" |
   \ endif
 
-" multi-purpose tab key (auto-complete)
-"function! InsertTabWrapper()
-"  let col = col('.') - 1
-"  if !col || getline('.')[col - 1] !~ '\k'
-"    return "\<tab>"
-"  else
-"    return "\<c-p>"
-"  endif
-"endfunction
-"inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-"inoremap <s-tab> <c-n>
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 
 " rename current file, via Gary Bernhardt
