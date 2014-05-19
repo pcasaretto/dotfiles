@@ -3,10 +3,7 @@ name=$1
 mkdir $name
 cd $name
 
-cat > Gemfile << EOF
-source :rubygems
-gem 'sinatra'
-EOF
+bundle init
 
 cat > app.rb << EOF
 require 'sinatra'
