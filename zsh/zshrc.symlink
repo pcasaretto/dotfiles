@@ -4,7 +4,7 @@ WORKSPACE=$HOME/workspace
 
 # all of our zsh files
 typeset -u config_files
-config_files=($DOTFILES/**/*.zsh)
+config_files=($DOTFILES/*/*.zsh)
 
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}
