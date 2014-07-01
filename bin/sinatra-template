@@ -5,6 +5,8 @@ cd $name
 
 bundle init
 
+echo "gem 'sinatra'" >> Gemfile
+
 cat > app.rb << EOF
 require 'sinatra'
 
