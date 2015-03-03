@@ -1,70 +1,57 @@
-" .vimrc
+call plug#begin()
 
-filetype off                  " required!
+Plug 'tpope/vim-sensible'
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-abolish'
+Plug 'Townk/vim-autoclose'
+Plug 'altercation/vim-colors-solarized'
+Plug 'bling/vim-airline'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+" Plug 'chrishunt/xterm-color-table.vim'
+" Plug 'chriskempson/base16-vim'
+Plug 'godlygeek/tabular'
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" NERD tree will be loaded on the first invocation of NERDTreeToggle command
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
+" Load vim-go dynamically
 
-Bundle 'chriskempson/base16-vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'puppetlabs/puppet-syntax-vim'
-Bundle 'Keithbsmiley/rspec.vim'
-Bundle 'SirVer/ultisnips'
-Bundle 'Trevoke/ultisnips-rspec'
-Bundle 'tpope/vim-abolish'
-Bundle 'Townk/vim-autoclose'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-fugitive'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'tpope/vim-liquid'
-Bundle 'tpope/vim-markdown'
-Bundle 'yaymukund/vim-rabl'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-repeat'
-Bundle 'adamlowe/vim-slurper'
-Bundle 'tpope/vim-surround'
-Bundle 'nelstrom/vim-textobj-rubyblock'
-Bundle 'kana/vim-textobj-user'
-Bundle 'tpope/vim-vividchalk'
-Bundle 'mattn/webapi-vim'
-Bundle 'chrishunt/xterm-color-table.vim'
+Plug 'fatih/vim-go', { 'for': 'go' }
 
-runtime macros/matchit.vim        " activate the matchit plugin
 
-syntax on                         " show syntax highlighting
+call plug#end()
+
+
 filetype plugin indent on
-set autoindent                    " set auto indent
-set ts=2                          " set indent to 2 spaces
-set shiftwidth=2
-set expandtab                     " use spaces, not tab characters
-set nocompatible                  " don't need to be compatible with old vim
-set number
-set showmatch                     " show bracket matches
-set ignorecase                    " ignore case in search
-set hlsearch                      " highlight all search matches
-set cursorline                    " highlight current line
-set smartcase                     " pay attention to case when caps are used
-set incsearch                     " show search results as I type
-set mouse=a                       " enable mouse support
-set ttimeoutlen=100               " decrease timeout for faster insert with 'O'
-set vb                            " enable visual bell (disable audio bell)
-set ruler                         " show row and column in footer
-set scrolloff=2                   " minimum lines above/below cursor
-set laststatus=2                  " always show status bar
-set list listchars=tab:»·,trail:· " show extra space characters
-set nofoldenable                  " disable code folding
-set clipboard=unnamed             " use the system clipboard
-set wildmenu                      " enable bash style tab completion
-set wildmode=list:longest,full
 
+" --- General settings ---
+set clipboard=unnamedplus " sane clipboard use
+set mouse=a               " enable mouse
+
+syntax on
+set background=dark
+colorscheme solarized
+
+" ----- bling/vim-airline settings -----
+" Always show statusbar
+set laststatus=2
+
+" Fancy arrow symbols, requires a patched font
+" To install a patched font, run over to
+"     https://github.com/abertsch/Menlo-for-Powerline
+" download all the .ttf files, double-click on them and click "Install"
+" Finally, uncomment the next line
+"let g:airline_powerline_fonts = 1
+
+" Show PASTE if in paste mode
+let g:airline_detect_paste=1
+
+" Show airline for tabs too
+let g:airline#extensions#tabline#enabled = 1
 " exit to normal mode with 'jj'
 inoremap jj <ESC>
 
@@ -76,38 +63,9 @@ vnoremap k gk
 nnoremap <Down> gj
 nnoremap <Up> gk
 vnoremap <Down> gj
-vnoremap <Up> gk
+noremap <Up> gk
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
-
-" put useful info in status bar
-set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [%l,%c]\ [%L,%p%%]
-
-" set dark background and color scheme
-set background=dark
-colorscheme base16-railscasts
-
-" set up some custom colors
-highlight clear SignColumn
-highlight VertSplit    ctermbg=236
-highlight ColorColumn  ctermbg=237
-highlight LineNr       ctermbg=236 ctermfg=240
-highlight CursorLineNr ctermbg=236 ctermfg=240
-highlight CursorLine   ctermbg=236
-highlight StatusLineNC ctermbg=238 ctermfg=0
-highlight StatusLine   ctermbg=240 ctermfg=12
-highlight IncSearch    ctermbg=0   ctermfg=3
-highlight Search       ctermbg=0   ctermfg=9
-highlight Visual       ctermbg=3   ctermfg=0
-highlight Pmenu        ctermbg=240 ctermfg=12
-highlight PmenuSel     ctermbg=0   ctermfg=3
-highlight SpellBad     ctermbg=0   ctermfg=1
-
-" highlight the status bar when in insert mode
-if version >= 700
-  au InsertEnter * hi StatusLine ctermfg=235 ctermbg=2
-  au InsertLeave * hi StatusLine ctermbg=240 ctermfg=12
-endif
 
 " set leader key to comma
 let mapleader = ","
@@ -117,123 +75,3 @@ let g:ctrlp_map = '<leader>f'
 let g:ctrlp_max_height = 30
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_match_window_reversed = 0
-
-" unmap F1 help
-nmap <F1> :echo<CR>
-imap <F1> <C-o>:echo<CR>
-
-" map . in visual mode
-vnoremap . :norm.<cr>
-
-" die hash rockets, die!
-vnoremap <leader>h :s/:\(\w*\) *=>/\1:/g<cr>
-
-function! Preserve(command)
-  " Preparation: save last search, and cursor position.
-  let _s=@/
-  let l = line(".")
-  let c = col(".")
-  " Do the business:
-  execute a:command
-  " Clean up: restore previous search history, and cursor position
-  let @/=_s
-  call cursor(l, c)
-endfunction
-
-" delete all trailing whitespace in current file
-map <leader>w :call Preserve(":%!git stripspace")<CR>
-
-" delete all trailing whitespace for each file in repo
-map <leader>W :arglocal! `git grep -lI` \| argdo execute("%!git stripspace") \| update<cr>
-
-" map markdown preview
-map <leader>m :!open -a Marked %<cr><cr>
-
-" map git commands
-map <leader>l :!clear && git log -p %<cr>
-map <leader>d :!clear && git diff %<cr>
-
-" shortcuts for going next/previous in quickfix (for git log spelunking)
-nmap [q :cprevious<cr>
-nmap ]q :cnext<cr>
-
-" clear the command line and search highlighting
-noremap <C-l> :nohlsearch<CR>
-
-" map %% to current directory
-cnoremap %% <C-R>=expand('%:h').'/'<cr>
-
-" toggle spell check with <F5>
-map <F5> :setlocal spell! spelllang=en_us<cr>
-imap <F5> <ESC>:setlocal spell! spelllang=en_us<cr>
-
-" jump to last position in file
-autocmd BufReadPost *
-  \ if line("'\"") > 0 && line("'\"") <= line("$") |
-  \   exe "normal g`\"" |
-  \ endif
-
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-
-" rename current file, via Gary Bernhardt
-function! RenameFile()
-  let old_name = expand('%')
-  let new_name = input('New file name: ', expand('%'))
-  if new_name != '' && new_name != old_name
-    exec ':saveas ' . new_name
-    exec ':silent !rm ' . old_name
-    redraw!
-  endif
-endfunction
-map <leader>n :call RenameFile()<cr>
-
-" Run specs with ',t' via Gary Bernhardt
-function! RunTests(filename)
-  " Write the file and run tests for the given filename
-  :w
-  :silent !clear
-  if match(a:filename, '\.feature$') != -1
-    exec ":!script/features " . a:filename
-  elseif match(a:filename, '_test\.rb$') != -1
-    exec ":!ruby -Itest " . a:filename
-  else
-    if filereadable("script/test")
-      exec ":!script/test " . a:filename
-    elseif filereadable("Gemfile")
-      exec ":!bundle exec rspec --color " . a:filename
-    else
-      exec ":!rspec --color " . a:filename
-    end
-  end
-endfunction
-
-function! SetTestFile()
-  " Set the spec file that tests will be run for.
-  let t:grb_test_file=@%
-endfunction
-
-function! RunTestFile(...)
-  if a:0
-    let command_suffix = a:1
-  else
-    let command_suffix = ""
-  endif
-
-  " Run the tests for the previously-marked file.
-  let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\|_test.rb\)$') != -1
-  if in_test_file
-    call SetTestFile()
-  elseif !exists("t:grb_test_file")
-    return
-  end
-  call RunTests(t:grb_test_file . command_suffix)
-endfunction
-
-function! RunNearestTest()
-  let spec_line_number = line('.')
-  call RunTestFile(":" . spec_line_number . " -b")
-endfunction
-
-" run test runner
-map <leader>r :call RunTestFile()<cr>
-map <leader>R :call RunNearestTest()<cr>

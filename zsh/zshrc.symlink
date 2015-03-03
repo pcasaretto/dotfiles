@@ -1,6 +1,6 @@
 # shortcut to this dotfiles path is $DOTFILES
 DOTFILES=$HOME/.dotfiles
-WORKSPACE=$HOME/workspace
+WORKSPACE=$HOME/src
 
 # all of our zsh files
 typeset -u config_files
