@@ -11,29 +11,12 @@ git_custom_status() {
   fi
 }
 
-#RVM and git settings
-if [[ -s ~/.rvm/scripts/rvm ]] ; then
-  RPS1='$(git_custom_status)%{$fg[red]%}[`~/.rvm/bin/rvm-prompt`]%{$reset_color%} $EPS1'
-else
-  if which rbenv &> /dev/null; then
-    RPS1='$(git_custom_status)%{$fg[red]%}[`rbenv version | sed -e "s/ (set.*$//"`]%{$reset_color%} $EPS1'
-  else
-    RPS1='$(git_custom_status) $EPS1'
-  fi
-fi
+RPS1='$(git_custom_status) $EPS1'
 
 function zle-line-init zle-keymap-select {
     VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]% %{$reset_color%}"
     MODE_TEXT="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/}"
-    if [[ -s ~/.rvm/scripts/rvm ]] ; then
-      RPS1='$MODE_TEXT $(git_custom_status)%{$fg[red]%}[`~/.rvm/bin/rvm-prompt`]%{$reset_color%} $EPS1'
-    else
-      if which rbenv &> /dev/null; then
-        RPS1='$MODE_TEXT $(git_custom_status)%{$fg[red]%}[`rbenv version | sed -e "s/ (set.*$//"`]%{$reset_color%} $EPS1'
-      else
-        RPS1='$MODE_TEXT $(git_custom_status) $EPS1'
-      fi
-    fi
+    RPS1='$MODE_TEXT $(git_custom_status) $EPS1'
     zle reset-prompt
 }
 
