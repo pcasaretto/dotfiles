@@ -1,3 +1,3 @@
 #compdef ws
 
-_arguments "1: :($(ls $WORKSPACE ))"
+_path_files -/W $WORKSPACE
