@@ -1,26 +1,31 @@
+let g:python_host_skip_check=1
+let g:loaded_python3_provider=1
 call plug#begin()
 
 Plug 'tpope/vim-sensible'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-abolish'
 Plug 'Townk/vim-autoclose'
-Plug 'altercation/vim-colors-solarized'
+Plug 'chriskempson/base16-vim'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-" Plug 'chrishunt/xterm-color-table.vim'
-" Plug 'chriskempson/base16-vim'
+Plug 'tpope/vim-repeat'
 Plug 'godlygeek/tabular'
+Plug 'vim-scripts/a.vim'
+Plug 'tpope/vim-sleuth'
+Plug 'rizzatti/dash.vim'
 
 " NERD tree will be loaded on the first invocation of NERDTreeToggle command
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
 " Load vim-go dynamically
-
 Plug 'fatih/vim-go', { 'for': 'go' }
+
+" Use go imports to fmt Go code
+let g:go_fmt_command = "goimports"
 
 
 call plug#end()
@@ -31,21 +36,25 @@ filetype plugin indent on
 " --- General settings ---
 set clipboard=unnamedplus " sane clipboard use
 set mouse=a               " enable mouse
+set tabstop=2             " display tabs as two spaces
+set shiftwidth=2          " each level indents two spaces
+set number " show line numbers
 
 syntax on
-set background=dark
-colorscheme solarized
+set background=light
+colorscheme base16-solarized
 
 " ----- bling/vim-airline settings -----
 " Always show statusbar
 set laststatus=2
 
+let g:airline_theme="solarized"
 " Fancy arrow symbols, requires a patched font
 " To install a patched font, run over to
-"     https://github.com/abertsch/Menlo-for-Powerline
+"     https://github.com/powerline/fonts/tree/master/Inconsolata
 " download all the .ttf files, double-click on them and click "Install"
 " Finally, uncomment the next line
-"let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
 
 " Show PASTE if in paste mode
 let g:airline_detect_paste=1
@@ -75,3 +84,9 @@ let g:ctrlp_map = '<leader>f'
 let g:ctrlp_max_height = 30
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_match_window_reversed = 0
+
+" Remap code completion to Ctrl+Space
+inoremap <Nul> <C-x><C-o>
+
+" Show hard tabs and trailing chars
+set list listchars=tab:»·,trail:·
