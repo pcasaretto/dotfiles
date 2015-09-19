@@ -3,10 +3,11 @@ let g:loaded_python3_provider=1
 call plug#begin()
 
 Plug 'tpope/vim-sensible'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-abolish'
 Plug 'Townk/vim-autoclose'
 Plug 'chriskempson/base16-vim'
+Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
@@ -24,43 +25,20 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 " Load vim-go dynamically
 Plug 'fatih/vim-go', { 'for': 'go' }
 
-" Use go imports to fmt Go code
-let g:go_fmt_command = "goimports"
-
-
 call plug#end()
-
-
-filetype plugin indent on
 
 " --- General settings ---
 set clipboard=unnamedplus " sane clipboard use
 set mouse=a               " enable mouse
 set tabstop=2             " display tabs as two spaces
 set shiftwidth=2          " each level indents two spaces
-set number " show line numbers
+set number                " show line numbers
 
 syntax on
-set background=light
+set background=dark
+let base16colorspace=256  " Access colors present in 256 colorspace
 colorscheme base16-solarized
 
-" ----- bling/vim-airline settings -----
-" Always show statusbar
-set laststatus=2
-
-let g:airline_theme="solarized"
-" Fancy arrow symbols, requires a patched font
-" To install a patched font, run over to
-"     https://github.com/powerline/fonts/tree/master/Inconsolata
-" download all the .ttf files, double-click on them and click "Install"
-" Finally, uncomment the next line
-let g:airline_powerline_fonts = 1
-
-" Show PASTE if in paste mode
-let g:airline_detect_paste=1
-
-" Show airline for tabs too
-let g:airline#extensions#tabline#enabled = 1
 " exit to normal mode with 'jj'
 inoremap jj <ESC>
 
@@ -88,5 +66,20 @@ let g:ctrlp_match_window_reversed = 0
 " Remap code completion to Ctrl+Space
 inoremap <Nul> <C-x><C-o>
 
-" Show hard tabs and trailing chars
-set list listchars=tab:»·,trail:·
+" ----- bling/vim-airline settings -----
+" Always show statusbar
+set laststatus=2
+
+let g:airline_theme="solarized"
+" Fancy arrow symbols, requires a patched font
+" To install a patched font, run over to
+"     https://github.com/powerline/fonts/tree/master/Inconsolata
+" download all the .ttf files, double-click on them and click "Install"
+" Finally, uncomment the next line
+let g:airline_powerline_fonts = 1
+
+" Show PASTE if in paste mode
+let g:airline_detect_paste=1
+
+" Show airline for tabs too
+let g:airline#extensions#tabline#enabled = 1

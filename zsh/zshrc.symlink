@@ -25,9 +25,6 @@ do
   source $file
 done
 
-# load the theme
-source "$DOTFILES/zsh/themes/gallois.zsh-theme"
-
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
 compinit
@@ -39,3 +36,4 @@ do
 done
 
 unset config_files
+
