@@ -1,1 +1,1 @@
-export GIT_EDITOR="vim -c 'startinsert'"
+export GIT_EDITOR="nvim -c 'startinsert'"
