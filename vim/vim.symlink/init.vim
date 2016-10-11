@@ -19,6 +19,7 @@ Plug 'godlygeek/tabular'
 Plug 'vim-scripts/a.vim'
 Plug 'tpope/vim-sleuth'
 Plug 'rizzatti/dash.vim'
+Plug 'fatih/vim-go'
 function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
@@ -29,14 +30,9 @@ Plug 'morhetz/gruvbox'
 " NERD tree will be loaded on the first invocation of NERDTreeToggle command
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
-" Load vim-go dynamically
-Plug 'fatih/vim-go', { 'for': 'go' }
 
 " Ag
 Plug 'mileszs/ack.vim'
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
 
 call plug#end()
 
@@ -105,7 +101,7 @@ set completeopt+=noselect
 set completeopt-=preview
 
 " Path to python interpreter for neovim
-let g:python3_host_prog  = '/usr/local/bin/python3'
+let g:python3_host_prog  = '/usr/bin/python3'
 " Skip the check of neovim module
 let g:python3_host_skip_check = 1
 
@@ -156,3 +152,10 @@ function! s:tab_complete()
 endfunction
 
 imap <silent><expr><TAB> <SID>tab_complete()
+
+" Ag
+if executable('ag')
+  let g:ackprg = 'ag'
+endif
+cnoreabbrev Ack Ack!
+nnoremap <Leader>a :Ack!<Space>
