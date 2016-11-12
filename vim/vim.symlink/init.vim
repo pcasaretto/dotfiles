@@ -63,6 +63,12 @@ noremap <Up> gk
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
 
+set showcmd             " Show (partial) command in status line.
+
+" More natural splits
+set splitbelow          " Horizontal split below current.
+set splitright          " Vertical split to right of current.
+
 " set leader key to comma
 let mapleader = ","
 
