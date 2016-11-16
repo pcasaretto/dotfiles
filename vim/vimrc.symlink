@@ -1,5 +1,3 @@
-set shell=/bin/sh
-
 set termguicolors
 
 call plug#begin()
@@ -26,12 +24,19 @@ function! DoRemote(arg)
 endfunction
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'morhetz/gruvbox'
 
 " NERD tree will be loaded on the first invocation of NERDTreeToggle command
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
 " Load vim-go dynamically
 Plug 'fatih/vim-go', { 'for': 'go' }
+
+" Ag
+Plug 'mileszs/ack.vim'
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 call plug#end()
 
@@ -45,7 +50,7 @@ set number                " show line numbers
 syntax on
 set background=dark
 let base16colorspace=256  " Access colors present in 256 colorspace
-colorscheme base16-solarized
+colorscheme gruvbox
 
 " exit to normal mode with 'jj'
 inoremap jj <ESC>
@@ -100,7 +105,7 @@ set completeopt+=noselect
 set completeopt-=preview
 
 " Path to python interpreter for neovim
-let g:python3_host_prog  = '/usr/bin/python3'
+let g:python3_host_prog  = '/usr/local/bin/python3'
 " Skip the check of neovim module
 let g:python3_host_skip_check = 1
 
@@ -124,8 +129,7 @@ else
   let g:neocomplete#enable_at_startup = 1
   let g:neocomplete#enable_smart_case = 1
   let g:neocomplete#sources#syntax#min_keyword_length = 3
-
-  if !exists('g:neocomplete#sources')
+	if !exists('g:neocomplete#sources')
     let g:neocomplete#sources = {}
   endif
   let g:neocomplete#sources._ = ['buffer', 'member', 'tag', 'file', 'dictionary']
@@ -143,7 +147,7 @@ function! s:tab_complete()
 
   " is there a snippet that can be expanded?
   " is there a placholder inside the snippet that can be jumped to?
-  " if neosnippet#expandable_or_jumpable() 
+  " if neosnippet#expandable_or_jumpable()
   "   return "\<Plug>(neosnippet_expand_or_jump)"
   " endif
 

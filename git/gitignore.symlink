@@ -13,6 +13,7 @@
 *.swp
 *.rbc
 .tm_properties
+.vscode
 
 #bundle install shims
 vendor/bundle
