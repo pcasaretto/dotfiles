@@ -54,8 +54,9 @@ values."
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
      ;; spell-checking
-     ;; syntax-checking
+     syntax-checking
      version-control
+     tmux
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -312,6 +313,8 @@ you should place your code here."
 
   (setq gofmt-command "goimports")
   (setq go-tab-width 2)
+
+  (global-set-key [f1] 'ansi-term)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
