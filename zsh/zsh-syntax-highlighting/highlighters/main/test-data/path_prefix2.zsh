@@ -31,7 +31,7 @@
 # Related to path_prefix.zsh
 
 BUFFER='ls /bin/s'
-WIDGET=zle-line-finish
+WIDGET=accept-line
 
 expected_region_highlight=(
   "4 9 default"    # /bin/s
