@@ -17,3 +17,10 @@
 
 #bundle install shims
 vendor/bundle
+
+#emacs shit
+*~
+.DS_Store
+*~
+*#
+.#*
