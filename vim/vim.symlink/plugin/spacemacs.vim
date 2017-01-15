@@ -11,8 +11,6 @@ nnoremap <silent><leader>fS :bufdo w<cr>
 nnoremap <silent><leader>fed :e $MYVIMRC<cr>
 nnoremap <silent><leader>feR :so $MYVIMRC<cr>
 
-nnoremap <silent><leader>qq :qa!<cr>
-
 " LEADER b
 nnoremap <silent><leader>bb :ls<cr>
 nnoremap <silent><leader>bd :bdelete<cr>
@@ -26,9 +24,15 @@ nnoremap <silent><leader>bR :e! %<cr>
 nnoremap <silent><leader>bY gg"+yG
 nnoremap <silent><leader>bw :setlocal readonly!<cr>
 
-" LEADER q
-nnoremap <silent><leader>qq :qall<cr>
-
 " LEADER p
 nnoremap <silent><leader>pt :NERDTreeToggle<cr>
 nnoremap <silent><leader>pf :CtrlP<cr>
+
+" LEADER q
+nnoremap <silent><leader>qq :qall<cr>
+
+" LEADER s
+nnoremap <silent><leader>sc :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><leader>sc
+
+" MISC
+nnoremap <leader>/ :Ack!  

@@ -79,7 +79,7 @@ inoremap <Nul> <C-x><C-o>
 " Always show statusbar
 set laststatus=2
 
-let g:airline_theme="solarized"
+let g:airline_theme="gruvbox"
 " Fancy arrow symbols, requires a patched font
 " To install a patched font, run over to
 "     https://github.com/powerline/fonts/tree/master/Inconsolata

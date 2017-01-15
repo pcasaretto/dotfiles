@@ -1,1 +1,1 @@
-/Users/pcasaretto/.vimrc
+/home/pcasaretto/.vimrc
