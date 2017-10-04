@@ -3,7 +3,7 @@ set termguicolors
 call plug#begin()
 
 Plug 'tpope/vim-sensible'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf'
 Plug 'tpope/vim-abolish'
 Plug 'Townk/vim-autoclose'
 Plug 'chriskempson/base16-vim'
@@ -19,10 +19,12 @@ Plug 'godlygeek/tabular'
 Plug 'vim-scripts/a.vim'
 Plug 'tpope/vim-sleuth'
 Plug 'rizzatti/dash.vim'
+Plug 'kien/rainbow_parentheses.vim'
 function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
 Plug 'morhetz/gruvbox'
+Plug 'dracula/vim'
 Plug 'elixir-lang/vim-elixir'
 
 " NERD tree will be loaded on the first invocation of NERDTreeToggle command
@@ -34,7 +36,7 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 " Ag
 Plug 'mileszs/ack.vim'
 if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
+  let g:ackprg = 'rg --vimgrep'
 endif
 
 call plug#end()
@@ -49,7 +51,7 @@ set number                " show line numbers
 syntax on
 set background=dark
 let base16colorspace=256  " Access colors present in 256 colorspace
-colorscheme gruvbox
+colorscheme dracula
 
 " exit to normal mode with 'jj'
 inoremap jj <ESC>
@@ -65,11 +67,6 @@ vnoremap <Down> gj
 noremap <Up> gk
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
-
-" ctrlp config
-let g:ctrlp_max_height = 30
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_match_window_reversed = 0
 
 " Remap code completion to Ctrl+Space
 inoremap <Nul> <C-x><C-o>
@@ -98,3 +95,11 @@ set completeopt+=noinsert
 set completeopt+=noselect
 " disable scratch window
 set completeopt-=preview
+
+" rainbow parenthesis
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+set rtp+=/usr/local/opt/fzf

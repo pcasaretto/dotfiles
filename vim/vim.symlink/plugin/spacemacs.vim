@@ -5,7 +5,7 @@ map <SPACE> <leader>
 nnoremap <silent><leader><Tab> :e #<cr>
 
 " LEADER f
-nnoremap <silent><leader>ff :CtrlP<cr>
+nnoremap <silent><leader>ff :FZF<cr>
 nnoremap <silent><leader>fs :w<cr>
 nnoremap <silent><leader>fS :bufdo w<cr>
 nnoremap <silent><leader>fed :e $MYVIMRC<cr>
@@ -26,7 +26,7 @@ nnoremap <silent><leader>bw :setlocal readonly!<cr>
 
 " LEADER p
 nnoremap <silent><leader>pt :NERDTreeToggle<cr>
-nnoremap <silent><leader>pf :CtrlP<cr>
+nnoremap <silent><leader>pf :FZF<cr>
 
 " LEADER q
 nnoremap <silent><leader>qq :qall<cr>
