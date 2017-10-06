@@ -1,6 +1,6 @@
 # shortcut to this dotfiles path is $DOTFILES
 WORKSPACE=$HOME/src
-DOTFILES=$WORKSPACE/dotfiles
+DOTFILES=$WORKSPACE/github.com/pcasaretto/dotfiles
 
 # all of our zsh files
 typeset -u config_files
@@ -11,6 +11,9 @@ for file in ${(M)config_files:#*/path.zsh}
 do
   source $file
 done
+
+# Vi mode
+bindkey -v
 
 # use .localrc for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.
@@ -36,5 +39,4 @@ do
 done
 
 unset config_files
-
 
