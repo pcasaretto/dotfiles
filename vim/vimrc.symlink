@@ -2,42 +2,31 @@ set termguicolors
 
 call plug#begin()
 
-Plug 'tpope/vim-sensible'
-Plug 'junegunn/fzf'
-Plug 'tpope/vim-abolish'
-Plug 'Townk/vim-autoclose'
-Plug 'chriskempson/base16-vim'
 Plug 'altercation/vim-colors-solarized'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'chriskempson/base16-vim'
+Plug 'dracula/vim'
+Plug 'elixir-lang/vim-elixir'
+Plug 'fatih/vim-go'
+Plug 'godlygeek/tabular'
+Plug 'junegunn/fzf'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'mileszs/ack.vim'
+Plug 'rizzatti/dash.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Townk/vim-autoclose'
+Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'godlygeek/tabular'
-Plug 'vim-scripts/a.vim'
+Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-sleuth'
-Plug 'rizzatti/dash.vim'
-Plug 'kien/rainbow_parentheses.vim'
-function! DoRemote(arg)
-  UpdateRemotePlugins
-endfunction
-Plug 'morhetz/gruvbox'
-Plug 'dracula/vim'
-Plug 'elixir-lang/vim-elixir'
-
-" NERD tree will be loaded on the first invocation of NERDTreeToggle command
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-
-" Load vim-go dynamically
-Plug 'fatih/vim-go', { 'for': 'go' }
-
-" Ag
-Plug 'mileszs/ack.vim'
-if executable('ag')
-  let g:ackprg = 'rg --vimgrep'
-endif
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/a.vim'
+Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 call plug#end()
 
@@ -75,7 +64,7 @@ inoremap <Nul> <C-x><C-o>
 " Always show statusbar
 set laststatus=2
 
-let g:airline_theme="gruvbox"
+let g:airline_theme='dracula'
 " Fancy arrow symbols, requires a patched font
 " To install a patched font, run over to
 "     https://github.com/powerline/fonts/tree/master/Inconsolata
@@ -89,6 +78,9 @@ let g:airline_detect_paste=1
 " Show airline for tabs too
 let g:airline#extensions#tabline#enabled = 1
 
+" Deoplete settings
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
 " neocomplete like
 set completeopt+=noinsert
 " deoplete.nvim recommend
@@ -102,4 +94,10 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+" Use fzf for fuzzy finder
 set rtp+=/usr/local/opt/fzf
+
+" Ack config
+if executable('ag')
+  let g:ackprg = 'rg --vimgrep'
+endif
