@@ -23,4 +23,5 @@ function zle-line-init zle-keymap-select {
 zle -N zle-line-init
 zle -N zle-keymap-select
 
-PROMPT='%{$fg[cyan]%}[%~% ]%(?.%{$fg[green]%}.%{$fg[red]%})%Bλ%b '
+precmd() { print -rP '%F{cyan}%~%f '}
+PROMPT="%(?.%{$fg[green]%}.%{$fg[red]%})%Bλ%b "
