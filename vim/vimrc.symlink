@@ -2,30 +2,28 @@ set termguicolors
 
 call plug#begin()
 
-Plug 'altercation/vim-colors-solarized'
-Plug 'chriskempson/base16-vim'
 Plug 'dracula/vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'fatih/vim-go'
 Plug 'godlygeek/tabular'
-Plug 'junegunn/fzf'
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/fzf.vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'mileszs/ack.vim'
-Plug 'rizzatti/dash.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Townk/vim-autoclose'
-Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-salve'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
+Plug 'venantius/vim-cljfmt'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-scripts/a.vim'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 call plug#end()
@@ -56,9 +54,6 @@ vnoremap <Down> gj
 noremap <Up> gk
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
-
-" Remap code completion to Ctrl+Space
-inoremap <Nul> <C-x><C-o>
 
 " ----- bling/vim-airline settings -----
 " Always show statusbar
