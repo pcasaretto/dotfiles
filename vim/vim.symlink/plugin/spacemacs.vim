@@ -34,5 +34,11 @@ nnoremap <silent><leader>qq :qall<cr>
 " LEADER s
 nnoremap <silent><leader>sc :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><leader>sc
 
+" LEADER t
+nnoremap <silent><leader>tc :tabnew<cr>
+nnoremap <silent><leader>td :tabclose<cr>
+nnoremap <silent><leader>tn :tabnext<cr>
+nnoremap <silent><leader>tp :tabprevious<cr>
+
 " MISC
 nnoremap <leader>/ :Ack!  
