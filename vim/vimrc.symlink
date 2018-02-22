@@ -9,7 +9,6 @@ Plug 'godlygeek/tabular'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim'
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tpope/vim-commentary'
@@ -24,6 +23,7 @@ Plug 'tpope/vim-surround'
 Plug 'venantius/vim-cljfmt'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'w0rp/ale'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 call plug#end()
@@ -48,12 +48,6 @@ nnoremap j gj
 nnoremap k gk
 vnoremap j gj
 vnoremap k gk
-nnoremap <Down> gj
-nnoremap <Up> gk
-vnoremap <Down> gj
-noremap <Up> gk
-inoremap <Down> <C-o>gj
-inoremap <Up> <C-o>gk
 
 " ----- bling/vim-airline settings -----
 " Always show statusbar
@@ -92,7 +86,10 @@ au Syntax * RainbowParenthesesLoadBraces
 " Use fzf for fuzzy finder
 set rtp+=/usr/local/opt/fzf
 
-" Ack config
-if executable('ag')
-  let g:ackprg = 'rg --vimgrep'
-endif
+" Use rg to search files
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
