@@ -2,6 +2,7 @@ set termguicolors
 
 call plug#begin()
 
+Plug 'bumaociyuan/vim-swift'
 Plug 'dracula/vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'fatih/vim-go'
@@ -23,7 +24,6 @@ Plug 'tpope/vim-surround'
 Plug 'venantius/vim-cljfmt'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'w0rp/ale'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 call plug#end()
@@ -34,6 +34,10 @@ set mouse=a               " enable mouse
 set tabstop=2             " display tabs as two spaces
 set shiftwidth=2          " each level indents two spaces
 set number                " show line numbers
+
+" persistent undo
+set undofile
+set undodir=/tmp/vimundo
 
 syntax on
 set background=dark
@@ -87,6 +91,7 @@ au Syntax * RainbowParenthesesLoadBraces
 set rtp+=/usr/local/opt/fzf
 
 " Use rg to search files
+set grepprg=rg\ --vimgrep
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,

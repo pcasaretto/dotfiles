@@ -2,7 +2,7 @@
 map <SPACE> <leader>
 
 " LEADER Tab
-nnoremap <silent><leader><Tab> :e #<cr>
+nnoremap <silent><leader><Tab> <c-^>
 
 " LEADER f
 nnoremap <silent><leader>ff :FZF<cr>

@@ -16,4 +16,7 @@ then
 
 	# disable the horrible side swipe history control on Chrome
 	defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool FALSE
+
+	# enable Airdrop over wired
+	defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 fi
