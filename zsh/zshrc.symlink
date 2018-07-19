@@ -6,6 +6,9 @@ DOTFILES=$WORKSPACE/github.com/pcasaretto/dotfiles
 typeset -u config_files
 config_files=($DOTFILES/*/*.zsh)
 
+# set vi mode first to make sure bindings will be set correctly
+bindkey -v
+
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}
 do
