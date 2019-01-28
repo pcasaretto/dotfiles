@@ -9,6 +9,7 @@ Plug 'fatih/vim-go'
 Plug 'godlygeek/tabular'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim'
+Plug 'qpkorr/vim-bufkill'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }

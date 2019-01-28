@@ -4,10 +4,10 @@ let g:go_fmt_command = "goimports"
 " Do not show hard tabs when on Go
 set nolist
 
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage-toggle)
+au FileType go nmap <leader>mr <Plug>(go-run)
+au FileType go nmap <leader>mb <Plug>(go-build)
+au FileType go nmap <leader>mt <Plug>(go-test)
+au FileType go nmap <leader>mc <Plug>(go-coverage-toggle)
 
 " By default the mapping gd is enabled, which opens the target identifier in current buffer. You can also open the definition/declaration, in a new vertical, horizontal, or tab, for the word under your cursor:
 
@@ -20,7 +20,7 @@ au FileType go nmap <Leader>gd <Plug>(go-doc)
 au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 
 " Show a list of interfaces which is implemented by the type under your cursor with <leader>s
-au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>ms <Plug>(go-implements)
 
 " highlight everything
 let g:go_highlight_build_constraints = 1
