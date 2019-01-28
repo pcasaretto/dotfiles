@@ -1,5 +1,8 @@
 set -g mouse on
-set -g default-terminal "screen-256color"
+
+# Set default term to xterm
+set -g default-terminal xterm-256color
+set -as terminal-overrides ",*-256color:Tc"
 
 # Start windows and panes at 1, not 0
 set -g base-index 1
@@ -8,6 +11,7 @@ setw -g pane-base-index 1
 # don't rename windows automatically
 set-option -g allow-rename off
 
+# reattach to user namespace
 set-option -g default-command "reattach-to-user-namespace -l $SHELL"
 
 # Powerline green theme
