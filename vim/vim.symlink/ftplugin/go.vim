@@ -1,6 +1,9 @@
 " Use go imports to fmt Go code
 let g:go_fmt_command = "goimports"
 
+" Use gopls for definitions
+let g:go_def_mode = 'gopls'
+
 " Do not show hard tabs when on Go
 set nolist
 

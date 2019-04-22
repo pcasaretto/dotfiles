@@ -139,7 +139,7 @@ install_dotfiles () {
   do
     file=${src%.*}
     dir=$(basename $(dirname $file ))
-    mkdir -p $XDG_CONFIG_HOME/$dir
+    mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/$dir
     dst="$XDG_CONFIG_HOME/$dir/$(basename $file)"
     link_file "$src" "$dst"
   done
