@@ -47,7 +47,7 @@ set termguicolors
 colorscheme dracula
 
 " exit to normal mode with 'jj'
-inoremap jj <ESC>
+inoremap fd <ESC>
 
 " sane movement with wrap turned on
 nnoremap j gj
