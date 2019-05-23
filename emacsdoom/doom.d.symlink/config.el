@@ -1,56 +1,36 @@
 ;;; ~/.doom.d/config.el -*- lexical-binding: t; -*-
 
 ;; Place your private configuration here
-
-(defadvice evil-inner-word (around underscore-as-word activate)
-  (let ((table (copy-syntax-table (syntax-table))))
-    (modify-syntax-entry ?_ "w" table)
-    (with-syntax-table table
-      ad-do-it)))
-
-(setq evil-want-Y-yank-to-eol nil)
-
 (setq doom-font (font-spec :family "Fira Code" :size 16))
 
-(def-package! lsp-mode
-  :commands (lsp-mode lsp-define-stdio-client)
-  :config
-  (setq lsp-enable-eldoc t
-        lsp-eldoc-render-all nil
-        lsp-highlight-symbol-at-point nil
-        lsp-enable-completion-at-point t))
+(evil-add-command-properties 'evil-yank-line :motion 'evil-line)
 
-(def-package! lsp-ui
-  :hook
-  (lsp-mode . lsp-ui-mode)
-  :config
-  (with-eval-after-load "lsp-mode"
-    (setq lsp-ui-flycheck-enable t))
-  (setq lsp-ui-sideline-enable t)
-  (setq lsp-ui-sideline-show-symbol t)
-  (setq lsp-ui-sideline-show-hover t)
-  (setq lsp-ui-sideline-show-code-actions t)
-  (setq lsp-ui-sideline-update-mode 'point)
-  (set-lookup-handlers! 'lsp-ui-mode
-    :definition #'lsp-ui-peek-find-definitions
-    :references #'lsp-ui-peek-find-references))
+(add-hook! 'after-change-major-mode-hook
+  (modify-syntax-entry ?_ "w")
+  (modify-syntax-entry ?- "w"))
 
-(def-package! company-lsp
-  :after lsp-mode
-  :config
-  (set-company-backend! 'lsp-mode 'company-lsp)
-  (setq company-transformers nil)
-  (setq company-lsp-async t
-        company-lsp-enable-recompletion t
-        company-lsp-enable-snippet t
-        ;; the below and company-transformers when
-        ;; enabled can slow things down
-        company-lsp-cache-candidates nil))
+;; (add-hook 'go-mode-hook #'lsp!)
+;; (add-hook 'ruby-mode-hook #'lsp!)
+(setq-default evil-escape-key-sequence "fd")
 
-(def-package! lsp-solargraph
-  :when (featurep! :lang ruby)
-  :after-call (ruby-mode)
-  :hook (ruby-mode . lsp-solargraph-enable)
-  :config
-  ;; Again, if you're wanting to use inf-ruby and company-inf-ruby
-  (set-company-backend! 'ruby-mode '(company-inf-ruby company-lsp)))
+(defun er-switch-to-previous-buffer ()
+  "Switch to previously open buffer.
+Repeated invocations toggle between the two most recently open buffers."
+  (interactive)
+  (switch-to-buffer (other-buffer (current-buffer) 1)))
+
+(map! :leader
+      :desc "Switch to previous buffer"       "`"    #'er-switch-to-previous-buffer
+      (:prefix-map ("p" . "project")
+                   :desc "Find file in project"  "f"  #'projectile-find-file
+                   )
+      (:prefix-map ("b" . "buffer")
+                   :desc "Kill buffer"                 "d"   #'kill-this-buffer
+                   )
+      (:prefix-map ("f" . "file")
+                   (:when (featurep! :ui neotree)
+                     :desc "Find file in project sidebar" "T" #'+neotree/find-this-file)
+                   (:when (featurep! :ui treemacs)
+                     :desc "Find file in project sidebar" "T" #'+treemacs/find-file)
+                   )
+      )
