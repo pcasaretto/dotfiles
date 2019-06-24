@@ -1,8 +1,8 @@
 set -g mouse on
 
 # Set default term to xterm
-set -g default-terminal xterm-256color
-set -as terminal-overrides ",*-256color:Tc"
+# set -g default-terminal xterm-256color
+# set -as terminal-overrides ",*-256color:Tc"
 
 # Start windows and panes at 1, not 0
 set -g base-index 1
@@ -13,6 +13,19 @@ set-option -g allow-rename off
 
 # reattach to user namespace
 set-option -g default-command "reattach-to-user-namespace -l $SHELL"
+
+# Use system clipboard?
+set -g set-clipboard on
+
+# http://comments.gmane.org/gmane.emacs.vim-emulation/1557
+set -s escape-time 0
+
+bind-key -T copy-mode-vi Enter send-keys -X copy-selection-and-cancel
+bind-key -T copy-mode-vi C-j send-keys -X copy-selection-and-cancel
+bind-key -T copy-mode-vi D send-keys -X copy-end-of-line
+bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-selection-and-cancel
+bind-key -T copy-mode-vi A send-keys -X append-selection-and-cancel
+bind -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "pbcopy"
 
 # Powerline green theme
 

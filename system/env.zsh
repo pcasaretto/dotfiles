@@ -1,4 +1,4 @@
-export VISUAL='emacsclient'
+export VISUAL='nvim'
 export EDITOR="$VISUAL"
 
 export LC_ALL=en_US.UTF-8

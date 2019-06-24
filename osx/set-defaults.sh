@@ -19,4 +19,7 @@ then
 
 	# enable Airdrop over wired
 	defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
+
+	# do not use press and hold for special characters
+	defaults write -g ApplePressAndHoldEnabled -bool false
 fi
