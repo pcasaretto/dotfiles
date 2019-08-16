@@ -105,3 +105,7 @@ command! -bang -nargs=* Rg
   \   <bang>0 ? fzf#vim#with_preview('up:60%')
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
+
+command! CopyFileName :let @+ = expand("%:t")
+command! CopyFilePath :let @+ = expand("%:p")
+command! CopyRelativeFilePath :let @+ = expand("%")
