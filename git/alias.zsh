@@ -1,7 +1,7 @@
 # Aliases
 alias gst='git status'
-alias gl='git pull'
-alias gup='git pull --rebase'
+alias gl='git pull --prune'
+alias gup='git pull --prune --rebase'
 alias gp='git push'
 alias gd='git diff'
 alias gc='git commit -v'
