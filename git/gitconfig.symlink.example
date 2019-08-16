@@ -35,8 +35,13 @@
         excludesfile = ~/.gitignore
 [apply]
         whitespace = nowarn
+[merge]
+	tool = vimdiff
 [mergetool]
+	prompt = true
         keepBackup = false
+[mergetool "vimdiff"]
+	cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [difftool]
         prompt = false
 [help]
