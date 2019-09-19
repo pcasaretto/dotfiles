@@ -2,7 +2,8 @@
 let g:go_fmt_command = "goimports"
 
 " Use gopls for definitions
-let g:go_def_mode = 'gopls'
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 
 " Do not show hard tabs when on Go
 set nolist
@@ -38,4 +39,4 @@ let g:go_auto_sameids = 1
 
 " show type information of thing under the cursor
 let g:go_auto_type_info = 1
-let g:go_updatetime = 800
+let g:go_updatetime = 3200
