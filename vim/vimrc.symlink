@@ -2,16 +2,15 @@ set termguicolors
 
 call plug#begin()
 
-Plug 'bumaociyuan/vim-swift'
 Plug 'dracula/vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'fatih/vim-go'
 Plug 'godlygeek/tabular'
 Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
-Plug 'mxw/vim-jsx'
-Plug 'pangloss/vim-javascript'
+Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'qpkorr/vim-bufkill'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'scrooloose/nerdtree'
