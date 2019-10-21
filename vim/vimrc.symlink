@@ -107,5 +107,5 @@ command! -bang -nargs=* Rg
   \   <bang>0)
 
 command! CopyFileName :let @+ = expand("%:t")
-command! CopyFilePath :let @+ = expand("%:p")
-command! CopyRelativeFilePath :let @+ = expand("%")
+command! CopyAbsoluteFilePath :let @+ = expand("%:p")
+command! CopyFilePath :let @+ = expand("%")
