@@ -2,6 +2,7 @@ set termguicolors
 
 call plug#begin()
 
+Plug 'dense-analysis/ale'
 Plug 'dracula/vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'fatih/vim-go'
