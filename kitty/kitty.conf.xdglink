@@ -774,10 +774,10 @@ map cmd+6 send_text all \x02\x36
 map cmd+7 send_text all \x02\x37
 map cmd+8 send_text all \x02\x38
 map cmd+9 send_text all \x02\x39
-map cmd+up send_text all \x02\x1b\x5b\x41
-map cmd+down send_text all \x02\x1b\x5b\x42
-map cmd+right send_text all \x02\x1b\x5b\x43
-map cmd+left send_text all \x02\x1b\x5b\x44
+map alt+up send_text all \x02\x1b\x5b\x41
+map alt+down send_text all \x02\x1b\x5b\x42
+map alt+right send_text all \x02\x1b\x5b\x43
+map alt+left send_text all \x02\x1b\x5b\x44
 map cmd+shift+left_bracket send_text all \x02\x70
 map cmd+shift+right_bracket send_text all \x02\x6e
 map cmd+shift+enter send_text all \x02\x7a
