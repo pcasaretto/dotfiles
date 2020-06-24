@@ -5,12 +5,8 @@
 
 (evil-add-command-properties 'evil-yank-line :motion 'evil-line)
 
-(add-hook! 'after-change-major-mode-hook
-  (modify-syntax-entry ?_ "w")
-  (modify-syntax-entry ?- "w"))
-
-;; (add-hook 'go-mode-hook #'lsp!)
-;; (add-hook 'ruby-mode-hook #'lsp!)
+(add-hook 'go-mode-hook #'lsp!)
+(add-hook 'ruby-mode-hook #'lsp!)
 (setq-default evil-escape-key-sequence "fd")
 
 (defun er-switch-to-previous-buffer ()
@@ -20,6 +16,7 @@ Repeated invocations toggle between the two most recently open buffers."
   (switch-to-buffer (other-buffer (current-buffer) 1)))
 
 (map! :leader
+      :desc "Search projetct"       "/"    #'+default/search-project
       :desc "Switch to previous buffer"       "`"    #'er-switch-to-previous-buffer
       (:prefix-map ("p" . "project")
                    :desc "Find file in project"  "f"  #'projectile-find-file
@@ -34,3 +31,5 @@ Repeated invocations toggle between the two most recently open buffers."
                      :desc "Find file in project sidebar" "T" #'+treemacs/find-file)
                    )
       )
+
+(add-to-list 'company-backends #'company-tabnine)
