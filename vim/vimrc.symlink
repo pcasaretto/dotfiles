@@ -4,6 +4,7 @@ call plug#begin()
 
 Plug 'dense-analysis/ale'
 Plug 'dracula/vim'
+Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'elixir-lang/vim-elixir'
 Plug 'fatih/vim-go'
 Plug 'godlygeek/tabular'
