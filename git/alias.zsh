@@ -1,5 +1,6 @@
 # Aliases
 alias gst='git status'
+alias gsw='git switch'
 alias gl='git pull --prune'
 alias gup='git pull --prune --rebase'
 alias gp='git push'
