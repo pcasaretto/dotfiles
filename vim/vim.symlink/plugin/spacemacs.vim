@@ -27,6 +27,9 @@ nnoremap <silent><leader>pf :FZF<cr>
 " LEADER q
 nnoremap <silent><leader>qq :qall<cr>
 
+" LEADER t
+nnoremap <silent><leader>tn :set invnumber<cr>
+
 " LEADER s
 nnoremap <silent><leader>sc :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><leader>sc
 
