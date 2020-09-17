@@ -6,7 +6,6 @@ alias gup='git pull --prune --rebase'
 alias gp='git push'
 alias gd='git diff'
 alias gc='git commit -v'
-alias gco='git checkout'
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 
 # Will return the current branch name
