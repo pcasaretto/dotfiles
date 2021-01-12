@@ -110,3 +110,7 @@ command! -bang -nargs=* Rg
 command! CopyFileName :let @+ = expand("%:t")
 command! CopyAbsoluteFilePath :let @+ = expand("%:p")
 command! CopyFilePath :let @+ = expand("%")
+
+" use quickfx instead of loclist for Ale
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
