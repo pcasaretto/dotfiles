@@ -6,6 +6,7 @@ Plug 'dense-analysis/ale'
 Plug 'dracula/vim'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'elixir-lang/vim-elixir'
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'fatih/vim-go'
 Plug 'godlygeek/tabular'
 Plug 'jiangmiao/auto-pairs'
