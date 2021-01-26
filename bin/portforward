@@ -1,0 +1,12 @@
+#!/bin/sh
+set -o pipefail
+
+TUNNEL="ssh -NT"
+echo Port forwarding for ports:
+for i in ${@:2}
+do
+  echo " - $i"
+  TUNNEL="$TUNNEL -L 127.0.0.1:$i:localhost:$i"
+done
+TUNNEL="$TUNNEL $1"
+exec $TUNNEL
