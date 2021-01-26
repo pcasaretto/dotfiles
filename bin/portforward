@@ -1,4 +1,18 @@
 #!/bin/sh
+#
+# Multiple port forward made easy.
+#
+# This script helps with port forwarding multiple ports using simple commands
+# It is specially useful when combined with shell expansion (http://zsh.sourceforge.net/Doc/Release/Expansion.html)
+#
+# USAGE:
+#
+#   $ portforward host 3000
+#   # => opens a ssh connection with -N and -T with host and forward local port 3000 to localhost:3000 @ host
+#
+#   $ portforward host 3000 3001
+#   $ portforward host {3000..3010}
+#   # => forwards ports 3000 up to 3010
 set -o pipefail
 
 TUNNEL="ssh -NT"
