@@ -50,10 +50,10 @@
        snippets          ; my elves. They type so I don't have to
 
        :emacs
-       (dired            ; making dired pretty [functional]
+       (dired)            ; making dired pretty [functional]
        ;;+ranger         ; bringing the goodness of ranger to dired
        ;;+icons          ; colorful icons for dired-mode
-        )
+        
        electric          ; smarter, keyword-based electric-indent
        ;;eshell            ; a consistent, cross-platform shell (WIP)
        imenu             ; an imenu sidebar and searchable code index
@@ -127,6 +127,7 @@
         +capture         ; org-capture in and outside of Emacs
         +export          ; Exporting org to whatever you want
         +habit           ; Keep track of your habits
+        +journal
         +present         ; Emacs for presentations
         +protocol)       ; Support for org-protocol:// links
        ;;perl              ; write code no one else can comprehend

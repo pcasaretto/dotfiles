@@ -19,17 +19,28 @@ Repeated invocations toggle between the two most recently open buffers."
       :desc "Search projetct"       "/"    #'+default/search-project
       :desc "Switch to previous buffer"       "`"    #'er-switch-to-previous-buffer
       (:prefix-map ("p" . "project")
-                   :desc "Find file in project"  "f"  #'projectile-find-file
-                   )
+                   :desc "Find file in project"  "f"  #'projectile-find-file)
+                   
       (:prefix-map ("b" . "buffer")
-                   :desc "Kill buffer"                 "d"   #'kill-this-buffer
-                   )
+                   :desc "Kill buffer"                 "d"   #'kill-this-buffer)
+                   
       (:prefix-map ("f" . "file")
                    (:when (featurep! :ui neotree)
                      :desc "Find file in project sidebar" "T" #'+neotree/find-this-file)
                    (:when (featurep! :ui treemacs)
-                     :desc "Find file in project sidebar" "T" #'+treemacs/find-file)
-                   )
-      )
+                     :desc "Find file in project sidebar" "T" #'+treemacs/find-file)))
+                   
+      
 
 (add-to-list 'company-backends #'company-tabnine)
+
+(setq org-journal-time-prefix "* "
+      org-journal-date-format "%a, %Y-%m-%d"
+      org-journal-file-type 'weekly
+      org-journal-file-format "%Y-%V.org")
+
+
+(setq mac-command-key-is-meta nil)
+(setq mac-command-modifier 'super)
+(setq mac-option-key-is-meta t)
+(setq mac-option-modifier t)
