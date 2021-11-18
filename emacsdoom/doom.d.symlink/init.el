@@ -12,7 +12,8 @@
        (company +auto)     ; the ultimate code completion backend
        ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
-       (ivy +fuzzy)        ; a search engine for love and life
+       ;; (ivy +fuzzy)        ; a search engine for love and life
+       vertico
 
        :ui
        ;;deft              ; notational velocity for Emacs
@@ -53,6 +54,7 @@
        (dired)            ; making dired pretty [functional]
        ;;+ranger         ; bringing the goodness of ranger to dired
        ;;+icons          ; colorful icons for dired-mode
+       undo
         
        electric          ; smarter, keyword-based electric-indent
        ;;eshell            ; a consistent, cross-platform shell (WIP)
@@ -145,6 +147,7 @@
        ;;solidity          ; do you need a blockchain? No.
        ;;swift             ; who asked for emoji variables?
        ;;terra             ; Earth and Moon in alignment for performance.
+       yaml
        web               ; the tubes
        ;;vala              ; GObjective-C
 
