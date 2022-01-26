@@ -9,7 +9,7 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'fatih/vim-go'
 Plug 'godlygeek/tabular'
-Plug 'jiangmiao/auto-pairs'
+Plug 'cohama/lexima.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
