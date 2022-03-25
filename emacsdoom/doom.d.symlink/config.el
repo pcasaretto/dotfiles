@@ -35,6 +35,19 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 
+(setq-default evil-escape-key-sequence "fd")
+
+(setq org-journal-time-prefix "* "
+       org-journal-date-format "%a, %Y-%m-%d"
+       org-journal-file-type 'weekly
+       org-journal-file-format "%Y-%V.org")
+
+
+(setq mac-command-key-is-meta nil)
+
+(setq mac-command-modifier 'super)
+(setq mac-option-key-is-meta t)
+(setq mac-option-modifier t)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
