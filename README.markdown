@@ -1,3 +1,7 @@
+# Archival
+
+This has been replaced by [nix + nix-darwin + home-manager]([url](https://github.com/pcasaretto/nix-home))
+
 # pcasaretto does dotfiles
 
 ## dotfiles
